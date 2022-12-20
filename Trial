@@ -1,14 +1,20 @@
-echo "# Human-leyboard-simulation-" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Black-Wonka/Human-leyboard-simulation-.git
-git push -u origin main
 import os
 import random
+import time
 
-# Vérifie si pyautogui est installé. Si ce n'est pas le cas, l'installe.
+# Licence gratuite à usage privé non commercial
+#
+# Ce logiciel est gratuit et destiné à un usage privé non commercial uniquement. Vous êtes autorisé à télécharger et à utiliser ce logiciel à des fins personnelles, mais vous n'avez pas le droit de le redistribuer ou de l'utiliser à des fins commerciales.
+#
+# Toute utilisation non autorisée de ce logiciel est interdite et pourra entraîner des poursuites judiciaires.
+#
+# En utilisant ce logiciel, vous acceptez les termes et conditions suivants :
+# - Vous n'êtes pas autorisé à redistribuer ce logiciel ou à en faire un usage commercial.
+# - Vous êtes responsable de toute perte ou dommage causé par l'utilisation de ce logiciel.
+# - Nous ne garantissons pas que ce logiciel sera sans erreur ni qu'il répondra à vos besoins.
+# - Nous nous réservons le droit de retirer ce logiciel à tout moment et sans préavis.
+
+   # Vérifie si pyautogui est installé. Si ce n'est pas le cas, l'installe.
 try:
     import pyautogui
 except ImportError:
@@ -16,18 +22,22 @@ except ImportError:
     import pyautogui
 
 # Ouvre une fenêtre OpenWord
-pyautogui.hotkey('win', 'r')  # Ouvre la boîte de dialogue Exécuter
-pyautogui.typewrite('winword')  # Saisit "winword" dans la boîte de dialogue Exécuter
-pyautogui.press('enter')  # Appuie sur Entrée pour lancer OpenWord
+pyautogui.hotkey('win', 'r')  # Ouvre la
 
-# Demande à l'utilisateur de saisir du texte dans la fenêtre OpenWord
+    # Ouvre la boîte de dialogue Exécuter
+pyautogui.typewrite('winword')
+    # Saisit "winword" dans la boîte de dialogue Exécuter
+pyautogui.press('enter')
+    # Appuie sur Entrée pour lancer OpenWord
+
+    # Demande à l'utilisateur de saisir du texte dans la fenêtre OpenWord
 print("Veuillez saisir du texte à simuler dans la fenêtre OpenWord")
 
-# Attend que l'utilisateur appuie sur la combinaison de touches Ctrl + A + Y pour récupérer le texte saisi et démarrer la simulation de frappe
+    # Attend que l'utilisateur appuie sur la combinaison de touches Ctrl + A + Y pour récupérer le texte saisi et démarrer la simulation de frappe
 print("Appuyez sur Ctrl + A + Y pour démarrer la simulation de frappe")
 pyautogui.hotkey('ctrl', 'a', 'y')
 
-# Récupère le texte saisi et le stocke dans une variable
+    # Récupère le texte saisi et le stocke dans une variable
 text = pyautogui.getClipboard()
 
 # Pour chaque mot du texte
@@ -40,3 +50,7 @@ for word in text.split():
 
 # Affiche un message indiquant que la simulation de frappe est terminée
 print("Simulation de frappe terminée")
+print("Simulation de frappe terminée")
+
+# Ferme la fenêtre OpenWord
+pyautogui.hotkey('alt', 'f4')
