@@ -1,3 +1,17 @@
+/*
+ * Licence gratuite à usage privé non commercial
+ *
+ * Ce logiciel est gratuit et destiné à un usage privé non commercial uniquement. Vous êtes autorisé à télécharger et à utiliser ce logiciel à des fins personnelles, mais vous n'avez pas le droit de le redistribuer ou de l'utiliser à des fins commerciales.
+ *
+ * Toute utilisation non autorisée de ce logiciel est interdite et pourra entraîner des poursuites judiciaires.
+ *
+ * En utilisant ce logiciel, vous acceptez les termes et conditions suivants :
+ * - Vous n'êtes pas autorisé à redistribuer ce logiciel ou à en faire un usage commercial.
+ * - Vous êtes responsable de toute perte ou dommage causé par l'utilisation de ce logiciel.
+ * - Nous ne garantissons pas que ce logiciel sera sans erreur ni qu'il répondra à vos besoins.
+ * - Nous nous réservons le droit de retirer ce logiciel à tout moment et sans préavis.
+ */
+
 echo "# Human-leyboard-simulation-" >> README.md
 git init
 git add README.md
