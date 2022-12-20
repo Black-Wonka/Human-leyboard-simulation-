@@ -1,0 +1,42 @@
+echo "# Human-leyboard-simulation-" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Black-Wonka/Human-leyboard-simulation-.git
+git push -u origin main
+import os
+import random
+
+# Vérifie si pyautogui est installé. Si ce n'est pas le cas, l'installe.
+try:
+    import pyautogui
+except ImportError:
+    os.system('pip install pyautogui')
+    import pyautogui
+
+# Ouvre une fenêtre OpenWord
+pyautogui.hotkey('win', 'r')  # Ouvre la boîte de dialogue Exécuter
+pyautogui.typewrite('winword')  # Saisit "winword" dans la boîte de dialogue Exécuter
+pyautogui.press('enter')  # Appuie sur Entrée pour lancer OpenWord
+
+# Demande à l'utilisateur de saisir du texte dans la fenêtre OpenWord
+print("Veuillez saisir du texte à simuler dans la fenêtre OpenWord")
+
+# Attend que l'utilisateur appuie sur la combinaison de touches Ctrl + A + Y pour récupérer le texte saisi et démarrer la simulation de frappe
+print("Appuyez sur Ctrl + A + Y pour démarrer la simulation de frappe")
+pyautogui.hotkey('ctrl', 'a', 'y')
+
+# Récupère le texte saisi et le stocke dans une variable
+text = pyautogui.getClipboard()
+
+# Pour chaque mot du texte
+for word in text.split():
+    # Simule la frappe de mot à une vitesse aléatoire comprise entre 95 et 165 mots par minute
+    words_per_minute = random.uniform(95, 165)
+    word_delay = 60 / words_per_minute  # Calcul du délai entre chaque mot
+    pyautogui.typewrite(word)  # Saisit le mot
+    pyautogui.pause(word_delay)  # Pause avant de saisir le prochain mot
+
+# Affiche un message indiquant que la simulation de frappe est terminée
+print("Simulation de frappe terminée")
